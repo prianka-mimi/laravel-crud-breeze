@@ -1,0 +1,295 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+}
+
+img {
+    border: 0px;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clr {
+    clear: both;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    overflow-x: hidden;
+}
+
+/*header part code start*/
+.header_part {
+    background-color: #4d6299;
+    padding: 4px 0px 4px;
+}
+
+.top_right_btn {
+    border: none !important;
+    color: #fff;
+}
+
+.top_right_btn:hover,
+.top_right_btn:focus,
+.top_right_btn:active {
+    color: #fff;
+}
+
+.top_right_btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.top_right_menu ul li a {
+    font-size: 14px;
+}
+
+.top_right_menu ul li a i {
+    margin-right: 5px;
+}
+
+/*content part code start*/
+.content_part {
+}
+
+.sidebar_part {
+    background-color: #252c34;
+    min-height: 100vh;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.user_part {
+    padding: 20px 0px 15px;
+    text-align: center;
+    border-bottom: 1px solid #17181f;
+}
+
+.user_part img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.user_part h5 {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.user_part p {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 15px;
+}
+
+.user_part p i {
+    color: green;
+}
+
+.menu {
+}
+
+.menu ul {
+    padding-left: 0px;
+}
+
+.menu ul li {
+}
+
+.menu ul li a {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 40px;
+    display: block;
+    border-bottom: 1px solid #17181f;
+    padding-left: 10px;
+    transition: all linear 0.5s;
+}
+
+.menu ul li:hover a {
+    background-color: #4d6299;
+}
+
+.menu ul li a i {
+    margin-right: 5px;
+}
+
+.content {
+}
+
+.breadcumb_part {
+    background-color: #f5f5f5;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 20px;
+}
+
+.bread ul {
+    padding: 0px;
+    margin: 0px;
+    padding-left: 15px;
+}
+
+.bread ul li {
+    float: left;
+}
+
+.bread ul li a {
+    color: #222222;
+    line-height: 45px;
+    font-size: 14px;
+    padding-right: 5px;
+    display: block;
+}
+
+.bread ul li a i {
+    padding-right: 5px !important;
+    font-size: 13px;
+}
+
+.welcome_part {
+    line-height: 30px;
+}
+
+.welcome_part p span {
+    font-weight: 700;
+}
+
+/*footer part code start*/
+.footer_part {
+    background-color: #16171d;
+}
+
+.copyright {
+}
+
+.copyright p {
+    font-size: 13px;
+    line-height: 60px;
+    display: inline-block !important;
+    color: #fff;
+}
+
+.copyright p a {
+    color: #fff;
+    font-weight: bold;
+}
+
+/*login page code star*/
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+.form-right i {
+    font-size: 100px;
+}
+
+/*another code start*/
+.card_title_part {
+    color: #222222;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.card_title_part i {
+    margin-right: 5px;
+}
+
+.card_button_part {
+    text-align: right;
+}
+
+.card_button_part a {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card_button_part a i {
+    margin-right: 5px;
+}
+
+span.req_star {
+    color: #cc0000;
+}
+
+.col_form_label {
+    font-size: 13px;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0px;
+}
+
+.form_control {
+}
+
+.btn_group_manage button {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn_group_manage ul li a {
+    font-size: 13px;
+}
+
+.custom_table {
+    font-size: 14px;
+}
+
+.custom_view_table {
+    font-size: 14px;
+}
+
+.custom_view_table tr td:first-child {
+    width: 29%;
+    font-weight: bold;
+    text-align: right;
+}
+
+.custom_view_table tr td:last-child {
+    width: 70%;
+    font-weight: 400;
+    text-align: left;
+}
+
+.img200 {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.error{
+    color: rgb(214, 38, 38);
+    font-style: italic;
+    font-size: 13px;
+    font-weight: bold;
+}
