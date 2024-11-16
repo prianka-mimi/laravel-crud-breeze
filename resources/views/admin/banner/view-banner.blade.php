@@ -124,7 +124,7 @@
                                 <form action="{{ url('dashboard/banner/delete/' . $viewBanner->ban_slug) }}"
                                     method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">Permanent Delete</button>
                                 </form>
                             </div>
                         </div>

@@ -21,22 +21,22 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td>Saidul Islam Uzzal</td>
+                                    <td>{{$viewUser->name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Phone</td>
                                     <td>:</td>
-                                    <td>01710726035</td>
+                                    <td>{{$viewUser->phone}}</td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
                                     <td>:</td>
-                                    <td>uzzalbd.creative</td>
+                                    <td>{{$viewUser->email}}</td>
                                 </tr>
                                 <tr>
                                     <td>Username</td>
                                     <td>:</td>
-                                    <td>uzzalbd</td>
+                                    <td>{{$viewUser->username}}</td>
                                 </tr>
                                 <tr>
                                     <td>Role</td>
@@ -47,7 +47,46 @@
                                     <td>Photo</td>
                                     <td>:</td>
                                     <td>
-                                        <img class="img200" src="images/avatar.jpg" alt="" />
+                                        @if ($viewUser->image != '')
+                                            <img height="100"
+                                                src="{{ asset('uploads_main/admin/user/' . $viewUser->image) }}"
+                                                alt="User Image">
+                                        @else
+                                            <img height="100" src="{{ asset('contents_main/admin/images/avatar.png') }}"
+                                                alt="User Image">
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Creator</td>
+                                    <td>:</td>
+                                    <td>{{$viewUser->creator}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Upload Time</td>
+                                    <td>:</td>
+                                    <td>{{$viewUser->created_at->format('d-M-y | D | h:i:s A')}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Editor</td>
+                                    <td>:</td>
+                                    <td>
+                                        @if ($viewUser->editor!='')
+                                        {{$viewUser->editor}}
+                                        @else
+                                        N/A
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Update Time</td>
+                                    <td>:</td>
+                                    <td>
+                                        @if ($viewUser->updated_at!='')
+                                        {{$viewUser->updated_at->format('d-M-y | D | h:i:s A')}}
+                                        @else
+                                        N/A
+                                        @endif
                                     </td>
                                 </tr>
                             </table>

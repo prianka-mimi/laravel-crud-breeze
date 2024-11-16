@@ -18,17 +18,19 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 - Add | Edit | Delete | Restore
 
-- Validations for Banner
+- Validations for Banner | User
 
 - Uses of slug | Creator Name & Time | Editor Name & Time
 
-- Single view page 
+- Single view page with slug
 
 - Logout ( Custom designed Sidebar ) work through default breeze system
 
 - Uses of Seeder for Role and BackUp User Information
 
 - Uses of Breeze for Authentication and Authorization | Login with email and password
+
+- Image upload without any laravel package
 
 ## Has Been Used
 

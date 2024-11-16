@@ -81,7 +81,6 @@
                     <style>
                         .pagination {
                             float: right;
-
                         }
                     </style>
 

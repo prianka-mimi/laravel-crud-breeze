@@ -23,6 +23,7 @@
                                 <th>Email</th>
                                 <th>Username</th>
                                 <th>Role</th>
+                                <th>User Image</th>
                                 <th>Manage</th>
                             </tr>
                         </thead>
@@ -32,15 +33,25 @@
                                     <td>{{$allUser->name}}</td>
                                     <td>{{$allUser->name}}</td>
                                     <td>{{$allUser->email}}</td>
-                                    <td>{{$allUser->created_at->format('d-M-y | D | h:i:s A')}}</td>
+                                    <td>{{$allUser->username}}</td>
                                     <td>---</td>
+                                    <td>
+                                        @if ($allUser->image != '')
+                                            <img height="30"
+                                                src="{{ asset('uploads_main/admin/user/' . $allUser->image) }}"
+                                                alt="User Image">
+                                        @else
+                                            <img height="30" src="{{ asset('contents_main/admin/images/avatar.png') }}"
+                                                alt="User Image">
+                                        @endif
+                                    </td>
                                     <td>
                                         <div class="btn-group btn_group_manage" role="group">
                                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle"
                                                 data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item"
-                                                        href="{{ url('dashboard/user/view') }}">View</a></li>
+                                                        href="{{ url('dashboard/user/view/'.$allUser->slug) }}">View</a></li>
                                                 <li><a class="dropdown-item"
                                                         href="{{ url('dashboard/user/edit') }}">Edit</a></li>
                                                 <li><a class="dropdown-item" href="#">Delete</a></li>
