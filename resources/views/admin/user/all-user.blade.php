@@ -31,7 +31,7 @@
                             @foreach ($user as $allUser)
                                 <tr>
                                     <td>{{$allUser->name}}</td>
-                                    <td>{{$allUser->name}}</td>
+                                    <td>{{$allUser->phone}}</td>
                                     <td>{{$allUser->email}}</td>
                                     <td>{{$allUser->username}}</td>
                                     <td>---</td>
@@ -53,7 +53,7 @@
                                                 <li><a class="dropdown-item"
                                                         href="{{ url('dashboard/user/view/'.$allUser->slug) }}">View</a></li>
                                                 <li><a class="dropdown-item"
-                                                        href="{{ url('dashboard/user/edit') }}">Edit</a></li>
+                                                        href="{{ url('dashboard/user/edit/'.$allUser->slug) }}">Edit</a></li>
                                                 <li><a class="dropdown-item" href="#">Delete</a></li>
                                             </ul>
                                         </div>

@@ -30,8 +30,9 @@ class UserController extends Controller
         return view('admin.user.view-user', compact('viewUser'));
     }
 
-    public function edit(){
-        return view('admin.user.edit-user');
+    public function edit($slug){
+        $editUser = User::where('slug', $slug)->first();
+        return view('admin.user.edit-user', compact('editUser'));
     }
 
     public function insert(Request $request){
@@ -83,8 +84,49 @@ class UserController extends Controller
         }
     }
 
-    public function update(){
-        echo('Prianka');
+    public function update(Request $request){
+        $request->validate([
+            'name' => 'required',
+            // 'email' => 'required|email|unique:users',
+            'username' => 'required',
+            // 'password' => 'required',
+            'confirm_password' => 'same:password',
+        ], [
+            'name.required' => 'Please enter user name',
+            'email.required' => 'Please enter user email',
+            'username.required' => 'Please enter user username',
+            'password.required'=>'Please enter password',
+            'confirm_password.required'=>'Please enter confirm password',
+        ]);
+
+        $slug = $request['slug'];
+
+        User::where('slug', $slug)->update([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'slug' => $slug,
+            'editor' => Auth::user()->name,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+        ]);
+
+        if ($request->hasFile('pic')) {
+            $image = $request->file('pic');
+            $imageName = $request['username'] . '-' . time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads_main/admin/user'), $imageName);
+
+            User::where('slug', $slug)->update([
+                'image' => $imageName
+            ]);
+        }
+
+        if ($request) {
+            return redirect('dashboard/user/view/' . $slug);
+        } else {
+            return redirect('dashboard/user/edit/' . $slug);
+        }
     }
 
     public function softdelete(){

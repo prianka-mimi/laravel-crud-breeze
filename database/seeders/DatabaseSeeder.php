@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Prianka Mimi',
             'email' => 'p@gmail.com',
+            'username' => 'admin',
             'password' => Hash::make('11'),
+            'image'=>'wallpaper (13).jpg',
+            'slug'=>'admin',
+            'creator'=>'Prianka Mimi',
             'created_at' => now(),
         ]);
     }

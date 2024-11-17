@@ -38,7 +38,7 @@ Route::get('log-out',[AdminController::class,'logout']);
 Route::get('dashboard/user',[UserController::class,'index']);
 Route::get('dashboard/user/add',[UserController::class,'add']);
 Route::get('dashboard/user/view/{slug}',[UserController::class,'view']);
-Route::get('dashboard/user/edit',[UserController::class,'edit']);
+Route::get('dashboard/user/edit/{slug}',[UserController::class,'edit']);
 Route::post('dashboard/user/submit',[UserController::class,'insert']);
 Route::post('dashboard/user/update',[UserController::class,'update']);
 Route::post('dashboard/user/softdelete',[UserController::class,'softdelete']);

@@ -30,7 +30,7 @@
                             @endif
 
                             {{ Auth::User()->name }}
-                            
+
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="fas fa-user-tie"></i> My
@@ -103,6 +103,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{ asset('contents_main/admin') }}/js/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('contents_main/admin') }}/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('contents_main/admin') }}/js/custom.js"></script>
 </body>

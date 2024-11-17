@@ -56,7 +56,7 @@
                             <label class="col-sm-3 col-form-label col_form_label">Password<span
                                     class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <input type="password" class="form-control form_control" id="" name="password" value="{{old('password')}}">
+                                <input type="password" class="form-control form_control" id="myInput1" name="password" value="{{old('password')}}">
                                 @error('password')
                                 <div class="error">{{$message}}</div>
                                 @enderror
@@ -66,10 +66,11 @@
                             <label class="col-sm-3 col-form-label col_form_label">Confirm-Password<span
                                     class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <input type="password" class="form-control form_control" id="" name="confirm_password" value="{{old('confirm_password')}}">
+                                <input type="password" class="form-control form_control" id="myInput2" name="confirm_password" value="{{old('confirm_password')}}">
                                 @error('confirm_password')
                                 <div class="error">{{$message}}</div>
                                 @enderror
+                                <input type="checkbox" onclick="myFunction()" class="mt-3"> Show Password
                             </div>
                         </div>
                         <div class="row mb-3">
