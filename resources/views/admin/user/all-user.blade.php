@@ -54,7 +54,15 @@
                                                         href="{{ url('dashboard/user/view/'.$allUser->slug) }}">View</a></li>
                                                 <li><a class="dropdown-item"
                                                         href="{{ url('dashboard/user/edit/'.$allUser->slug) }}">Edit</a></li>
-                                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                {{-- <li><a class="dropdown-item" href="#">Delete</a></li> --}}
+                                                <li>
+                                                    <form
+                                                        action="{{ url('dashboard/user/softdelete/'.$allUser->slug) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <button type="submit" class="dropdown-item">Delete</button>
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>

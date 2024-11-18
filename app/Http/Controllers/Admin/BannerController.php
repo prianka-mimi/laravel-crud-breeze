@@ -38,7 +38,7 @@ class BannerController extends Controller
         $editBanner = Banner::where('ban_slug', $slug)->where('ban_status',1)->first();
 
         if(!$editBanner){
-            // return view('admin.recyclebin.banner', compact('editBanner'));
+            // return view('admin.recyclebin.recycle', compact('editBanner'));
             return redirect()->route('recyclebin');
         }
 

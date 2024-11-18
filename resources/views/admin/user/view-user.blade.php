@@ -10,7 +10,16 @@
                         </div>
                         <div class="col-md-4 card_button_part">
                             <a href="{{url('dashboard/user/edit/'.$viewUser->slug)}}" class="btn btn-sm btn-dark mx-2"><i class="fas fa-pen"></i>Edit</a>
-                            <a href="{{url('dashboard/user')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All User</a>
+                            {{-- <a href="{{url('dashboard/user')}}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All User</a> --}}
+
+                            @if ($viewUser->status == 1)
+                                <a href="{{ url('dashboard/user') }}" class="btn btn-sm btn-dark"><i
+                                        class="fas fa-th"></i>All User</a>
+                            @else
+                                <a href="{{ url('dashboard/recyclebin') }}" class="btn btn-sm btn-dark"><i
+                                        class="fas fa-trash"></i>All Recyclebin</a>
+                            @endif
+
                         </div>
                     </div>
                 </div>
@@ -95,12 +104,36 @@
                         <div class="col-md-2"></div>
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer d-flex justify-content-between">
                     <div class="btn-group" role="group" aria-label="Button group">
                         <button type="button" class="btn btn-sm btn-dark">Print</button>
                         <button type="button" class="btn btn-sm btn-secondary">PDF</button>
                         <button type="button" class="btn btn-sm btn-dark">Excel</button>
                     </div>
+
+                    @if ($viewUser->status == 1)
+                        <div class="">
+                            <form action="{{ url('dashboard/user/softdelete/' . $viewUser->slug) }}"
+                                method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    @else
+                        <div class="d-flex">
+                            <form action="{{ url('dashboard/user/restore/' . $viewUser->slug) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Restore</button>
+                            </form>
+                            <div class="mx-2">
+                                <form action="{{ url('dashboard/user/delete/' . $viewUser->slug) }}"
+                                    method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Permanent Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

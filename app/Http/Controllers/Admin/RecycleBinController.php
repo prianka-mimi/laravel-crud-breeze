@@ -10,7 +10,7 @@ class RecycleBinController extends Controller
 {
     public function index()
     {
-        $banner = Banner::where('ban_status', 0)->orderBy('deleted_at', 'desc')->paginate(5);
-        return view('admin.recyclebin.banner', compact('banner'));
+        $banner = Banner::where('ban_status', 0)->orderBy('deleted_at', 'desc')->paginate(3);
+        return view('admin.recyclebin.recycle', compact('banner'));
     }
 }

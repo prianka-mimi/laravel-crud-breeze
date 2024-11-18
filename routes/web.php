@@ -41,9 +41,9 @@ Route::get('dashboard/user/view/{slug}',[UserController::class,'view']);
 Route::get('dashboard/user/edit/{slug}',[UserController::class,'edit']);
 Route::post('dashboard/user/submit',[UserController::class,'insert']);
 Route::post('dashboard/user/update',[UserController::class,'update']);
-Route::post('dashboard/user/softdelete',[UserController::class,'softdelete']);
-Route::post('dashboard/user/restore',[UserController::class,'restore']);
-Route::post('dashboard/user/delete',[UserController::class,'delete']);
+Route::post('dashboard/user/softdelete/{slug}',[UserController::class,'softdelete']);
+Route::post('dashboard/user/restore/{slug}',[UserController::class,'restore']);
+Route::post('dashboard/user/delete/{slug}',[UserController::class,'delete']);
 
 Route::get('dashboard/banner',[BannerController::class,'index']);
 Route::get('dashboard/banner/add',[BannerController::class,'add']);

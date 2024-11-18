@@ -17,7 +17,7 @@ class UserController extends Controller
     }
 
     public function index(){
-        $user=User::orderBy('id','desc')->get();
+        $user=User::orderBy('id','desc')->where('status',1)->paginate(6);
         return view('admin.user.all-user',compact('user'));
     }
 
@@ -31,7 +31,13 @@ class UserController extends Controller
     }
 
     public function edit($slug){
-        $editUser = User::where('slug', $slug)->first();
+        $editUser = User::where('slug', $slug)->where('status',1)->first();
+
+        if(!$editUser){
+            // return view('admin.recyclebin.recycle', compact('editUser'));
+            return redirect()->route('recyclebin');
+        }
+
         return view('admin.user.edit-user', compact('editUser'));
     }
 
@@ -129,15 +135,27 @@ class UserController extends Controller
         }
     }
 
-    public function softdelete(){
-        echo('Prianka');
+    public function softdelete($slug)
+    {
+        User::where('slug', $slug)->where('status', 1)->update([
+            'status' => 0,
+            'deleted_at'=>Carbon::now()->toDateTimeString(),
+        ]);
+        return redirect('dashboard/user');
     }
 
-    public function restore(){
-        echo('Prianka');
+    public function restore($slug)
+    {
+        User::where('slug', $slug)->where('status', 0)->update([
+            'status' => 1,
+            'restored_at'=>Carbon::now()->toDateTimeString(),
+        ]);
+        return redirect('dashboard/recyclebin');
     }
 
-    public function delete(){
-        echo('Prianka');
+    public function delete($slug)
+    {
+        User::where('slug', $slug)->where('status', 0)->delete();
+        return redirect('dashboard/recyclebin');
     }
 }

@@ -1,12 +1,12 @@
 # Admin Panel Laravel CRUD in Breeze !
 
 It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** can...
- - Banner
+ - User | Banner
     - Add
     - View
     - Edit 
     - Delete
- - Restore Banner data or can permanently delete from database
+ - Restore User | Banner data or can permanently delete from database
  - Login with email and password
  - LogOut
 
@@ -16,17 +16,21 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 ## Features
 
-- Add | Edit | Delete | Restore
+- Add | View | Edit | Delete | Restore - User | Banner
 
-- Validations for Banner | User
+- Validations - User | Banner
 
-- Uses of slug | Creator Name & Time | Editor Name & Time
+- Uses of slug | Creator Name & Time | Editor Name & Time - User | Banner
 
-- Single view page with slug
+- Single view page with slug - User | Banner
 
-- Logout ( Custom designed Sidebar ) work through default breeze system
+- Unable to Edit in RecycleBin - User | Banner
+
+- Pagination using Bootstrap - User | Banner
 
 - Uses of Seeder for Role and BackUp User Information
+
+- Logout ( Custom designed Sidebar ) work through default breeze system
 
 - Uses of Breeze for Authentication and Authorization | Login with email and password
 
@@ -37,6 +41,76 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
  - Html
  - Css
  - Bootstrap
+ - JavaScript
+   - JQuery (Password Toggle)
+
+## View In Short
+
+**Dashboard**
+
+<img  src="public/ss/dashboard.png"  alt="Admin Panel CRUD with Role">
+
+**All User**
+
+<img  src="public/ss/all-user.png"  alt="Admin Panel CRUD with Role">
+
+**Add User**
+
+> Add User with Validation
+
+<img  src="public/ss/add-user.png"  alt="Admin Panel CRUD with Role">
+
+**View User**
+
+> View User with Edit & SoftDelete Button
+
+<img  src="public/ss/view-user.png"  alt="Admin Panel CRUD with Role">
+
+**Edit User**
+
+<img  src="public/ss/edit-user.png"  alt="Admin Panel CRUD with Role">
+
+**User Manage Button**
+
+<img  src="public/ss/user-manage.png"  alt="Admin Panel CRUD with Role">
+
+**All Banner**
+
+> All Banner after adding a banner
+
+<img  src="public/ss/all-banner.png"  alt="Admin Panel CRUD with Role">
+
+**Add Banner**
+
+> Add Banner with Validation
+
+<img  src="public/ss/add-banner.png"  alt="Admin Panel CRUD with Role">
+
+**View Banner**
+
+> View Banner with Edit & SoftDelete Button
+
+<img  src="public/ss/view-banner.png"  alt="Admin Panel CRUD with Role">
+
+**Edit Banner**
+
+<img  src="public/ss/edit-banner.png"  alt="Admin Panel CRUD with Role">
+
+**RecycleBin**
+
+> All - User | Banner - RecycleBin with Pagination
+
+<img  src="public/ss/recycle-bin.png"  alt="Admin Panel CRUD with Role">
+
+**RecycleBin Manage Button**
+
+<img  src="public/ss/recycle-manage.png"  alt="Admin Panel CRUD with Role">
+
+**Restore**
+
+> All User (also in Banner) View with Restore & Permanent Delete Button
+
+<img  src="public/ss/recycle-view.png"  alt="Admin Panel CRUD with Role">
   
 ## Contact
 
