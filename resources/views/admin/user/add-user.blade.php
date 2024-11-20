@@ -73,15 +73,22 @@
                                 <input type="checkbox" onclick="myFunction()" class="mt-3"> Show Password
                             </div>
                         </div>
+                        @php
+                            $role=App\Models\Role::orderBy('role_id','ASC')->get();
+                        @endphp
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">User Role<span
                                     class="req_star">*</span>:</label>
                             <div class="col-sm-4">
                                 <select class="form-control form_control" id="" name="role">
-                                    <option>Select Role</option>
-                                    <option value="">Superadmin</option>
-                                    <option value="">Admin</option>
+                                    <option value="">Select Role</option>
+                                    @foreach ($role as $allRole)
+                                    <option value="{{$allRole->role_id}}">{{$allRole->role_name}}</option>
+                                    @endforeach
                                 </select>
+                                @error('role')
+                                    <div class="error">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="row mb-3">

@@ -42,7 +42,13 @@
                                 <td>{{$allUser->phone}}</td>
                                 <td>{{$allUser->email}}</td>
                                 <td>{{$allUser->username}}</td>
-                                <td>---</td>
+                                <td>
+                                    @if ($allUser->role!='')
+                                    {{$allUser->roleInfo->role_name}}
+                                    @else
+                                    N/A
+                                    @endif
+                                </td>
                                 <td>
                                     @if ($allUser->image != '')
                                         <img height="30"

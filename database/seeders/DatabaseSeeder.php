@@ -24,11 +24,19 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Prianka Mimi',
             'email' => 'p@gmail.com',
-            'username' => 'admin',
+            'username' => 'prianka-mimi',
             'password' => Hash::make('11'),
             'image'=>'wallpaper (13).jpg',
-            'slug'=>'admin',
+            'slug'=>'super-admin',
+            'role'=>'1',
             'creator'=>'Prianka Mimi',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('roles')->insert([
+            'role_id'=>'1',
+            'role_name'=>'Admin',
             'created_at' => now(),
         ]);
     }

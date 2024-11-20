@@ -6,6 +6,7 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
     - View
     - Edit 
     - Delete
+ - User Role - Assign | Edit
  - Restore User | Banner data or can permanently delete from database
  - Login with email and password
  - LogOut
@@ -26,6 +27,12 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 - Unable to Edit in RecycleBin - User | Banner
 
+- Assign Role to User | Edit Role User
+
+- Default User Role Visitor (3) - If Role Not Selected
+
+- Uses of Middleware for which Role | Roles - can Access what or not
+
 - Pagination using Bootstrap - User | Banner
 
 - Uses of Seeder for Role and BackUp User Information
@@ -42,7 +49,7 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
  - Css
  - Bootstrap
  - JavaScript
-   - JQuery (Password Toggle)
+   - JQuery (Password Toggle User)
 
 ## View In Short
 
@@ -58,6 +65,8 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 > Add User with Validation
 
+> Default Role Visitor (3) - If Role Not Selected
+
 <img  src="public/ss/add-user.png"  alt="Admin Panel CRUD with Role">
 
 **View User**
@@ -68,11 +77,21 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 **Edit User**
 
+> Role changeable | Can Edit
+
 <img  src="public/ss/edit-user.png"  alt="Admin Panel CRUD with Role">
 
-**User Manage Button**
+**User | Banner - Manage Button**
 
 <img  src="public/ss/user-manage.png"  alt="Admin Panel CRUD with Role">
+
+**Role - Member View & Permissions**
+
+<img  src="public/ss/role-member-permission-view.png"  alt="Admin Panel CRUD with Role">
+
+**Role - Visitor View & Permissions**
+
+<img  src="public/ss/role-visitor-permission-view.png"  alt="Admin Panel CRUD with Role">
 
 **All Banner**
 

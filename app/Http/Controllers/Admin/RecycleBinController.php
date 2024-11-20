@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class RecycleBinController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+    
     public function index()
     {
         $banner = Banner::where('ban_status', 0)->orderBy('deleted_at', 'desc')->paginate(3);

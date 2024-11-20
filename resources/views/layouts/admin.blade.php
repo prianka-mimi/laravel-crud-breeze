@@ -63,10 +63,16 @@
                     <div class="menu">
                         <ul>
                             <li><a href="{{ url('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                            @if (Auth::User()->role<=2)
+                            @if (Auth::User()->role==1)
                             <li><a href="{{ url('dashboard/user') }}"><i class="fas fa-user-circle"></i> Users</a></li>
+                            @endif
                             <li><a href="{{ url('dashboard/banner') }}"><i class="fas fa-images"></i> Banner</a></li>
+                            @if (Auth::User()->role==1)
                             <li><a href="{{ url('dashboard/recyclebin') }}"><i class="fas fa-trash"></i> RecycleBin</a>
+                            @endif
                             </li>
+                            @endif
                             {{-- <li><a href="#"><i class="fas fa-comments"></i> Contact Message</a></li> --}}
                             <li><a href="{{ url('/') }}"><i class="fas fa-globe"></i> Live Site</a></li>
                             <li><a href="{{ url('log-out') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>

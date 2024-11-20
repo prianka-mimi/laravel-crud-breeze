@@ -51,7 +51,13 @@
                                 <tr>
                                     <td>Role</td>
                                     <td>:</td>
-                                    <td>---</td>
+                                    <td>
+                                        @if ($viewUser->role!='')
+                                        {{$viewUser->roleInfo->role_name}}
+                                        @else
+                                        N/A
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Photo</td>

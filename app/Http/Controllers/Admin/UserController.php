@@ -14,6 +14,7 @@ class UserController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     public function index(){
@@ -48,6 +49,7 @@ class UserController extends Controller
             'username' => 'required',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
+            // 'role' => 'required',
             'pic' => 'required',
         ], [
             'name.required' => 'Please enter user name',
@@ -55,6 +57,7 @@ class UserController extends Controller
             'username.required' => 'Please enter user username',
             'password.required'=>'Please enter password',
             'confirm_password.required'=>'Please enter confirm password',
+            // 'role.required' => 'Please enter user role',
             'pic.required' => 'Please enter user Image',
         ]);
 
@@ -78,6 +81,7 @@ class UserController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'slug' => $slug,
+            'role' => $request->role?:3,
             'image' => $imageName,
             'creator' => Auth::user()->name,
             'created_at' => Carbon::now()->toDateTimeString(),
@@ -114,6 +118,7 @@ class UserController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'slug' => $slug,
+            'role' => $request->role,
             'editor' => Auth::user()->name,
             'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
