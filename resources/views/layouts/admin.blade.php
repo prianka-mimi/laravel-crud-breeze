@@ -8,6 +8,8 @@
     <title>Admin Panel</title>
     <link rel="stylesheet" href="{{ asset('contents_main/admin') }}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('contents_main/admin') }}/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('vendor/flasher/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/flasher/flasher-toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('contents_main/admin') }}/css/style.css">
 </head>
 
@@ -111,6 +113,9 @@
     </footer>
     <script src="{{ asset('contents_main/admin') }}/js/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('contents_main/admin') }}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('vendor/flasher/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/flasher/toastr.min.js') }}"></script>
+    <script src="{{ asset('vendor/flasher/flasher-toastr.min.js') }}"></script>
     <script src="{{ asset('contents_main/admin') }}/js/custom.js"></script>
 </body>
 

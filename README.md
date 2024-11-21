@@ -17,7 +17,7 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 ## Features
 
-- Add | View | Edit | Delete | Restore - User | Banner
+- Add | View | Edit | Delete | Restore - User | Banner ( Success | Error - Message By Toastr )
 
 - Validations - User | Banner
 
@@ -25,13 +25,15 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 
 - Single view page with slug - User | Banner
 
-- Unable to Edit in RecycleBin - User | Banner
+- Unable to Edit in RecycleBin - User | Banner ( Access Denied Message By Toastr )
 
 - Assign Role to User | Edit Role User
 
 - Default User Role Visitor (3) - If Role Not Selected
 
 - Uses of Middleware for which Role | Roles - can Access what or not
+
+- Uses of PHP Flasher (Toastr) - Banner | Success Login | Logout
 
 - Pagination using Bootstrap - User | Banner
 
@@ -50,6 +52,7 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
  - Bootstrap
  - JavaScript
    - JQuery (Password Toggle User)
+ - PHP Flasher (Toastr)
 
 ## View In Short
 
@@ -124,6 +127,10 @@ It's a simple **Admin Panel Laravel CRUD ** multi page project **With Breeze** c
 **RecycleBin Manage Button**
 
 <img  src="public/ss/recycle-manage.png"  alt="Admin Panel CRUD with Role">
+
+**RecycleBin Edit Permission Denied - Toastr**
+
+<img  src="public/ss/recycle-edit.png"  alt="Admin Panel CRUD with Role">
 
 **Restore**
 

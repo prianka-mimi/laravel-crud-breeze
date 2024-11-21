@@ -40,6 +40,8 @@ class BannerController extends Controller
 
         if(!$editBanner){
             // return view('admin.recyclebin.recycle', compact('editBanner'));
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(15000)->addError('Opps ! You Do Not Have Permission To Access This Data');
             return redirect()->route('recyclebin');
         }
 
@@ -85,8 +87,12 @@ class BannerController extends Controller
         }
 
         if ($request) {
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Banner Added Successfully');
             return redirect('dashboard/banner');
         } else {
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(15000)->addError('Opps ! Something Wrong . Please Try Again');
             return redirect('dashboard/banner/add');
         }
     }
@@ -128,8 +134,12 @@ class BannerController extends Controller
         }
 
         if ($request) {
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Banner Updated Successfully');
             return redirect('dashboard/banner/view/' . $slug);
         } else {
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addError('Opps ! Something Wrong . Please Try Again');
             return redirect('dashboard/banner/edit/' . $slug);
         }
     }
@@ -140,7 +150,16 @@ class BannerController extends Controller
             'ban_status' => 0,
             'deleted_at'=>Carbon::now()->toDateTimeString(),
         ]);
+
+        if($slug){
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Banner Deleted Successfully');
         return redirect('dashboard/banner');
+        }else{
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addError('Opps ! Something Wrong . Please Try Again');
+            return redirect('dashboard/banner');
+        }
     }
 
     public function restore($slug)
@@ -149,12 +168,30 @@ class BannerController extends Controller
             'ban_status' => 1,
             'restored_at'=>Carbon::now()->toDateTimeString(),
         ]);
+
+        if($slug){
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Banner Restored Successfully');
         return redirect('dashboard/recyclebin');
+        }else{
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addError('Opps ! Something Wrong . Please Try Again');
+            return redirect('dashboard/recyclebin');
+        }
     }
 
     public function delete($slug)
     {
         Banner::where('ban_slug', $slug)->where('ban_status', 0)->delete();
+
+        if($slug){
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Banner Deleted Successfully');
         return redirect('dashboard/recyclebin');
+        }else{
+            toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addError('Opps ! Something Wrong . Please Try Again');
+            return redirect('dashboard/recyclebin');
+        }
     }
 }

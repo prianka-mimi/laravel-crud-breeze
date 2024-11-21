@@ -13,10 +13,14 @@ class AdminController extends Controller
     }
 
     public function index(){
+        toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Log In Successfully');
         return view('admin.dashboard.index');
     }
 
     public function logout(){
+        toastr()->positionClass('toast-bottom-right')
+            ->closeButton()->closeOnHover(false)->timeOut(10000)->addSuccess('Logout Successfully');
         Auth::logout();
         return redirect('/');
     }
